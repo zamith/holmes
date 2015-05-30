@@ -35,6 +35,14 @@ Holmes.parse("<p>Paragraph</p>").all_with_tag("p").first.text
 # Paragraph
 ```
 
+### `open`
+
+Downloads and parses an HTML document from an URL:
+
+```crystal
+Holmes.open("http://rubyconf.pt").all_with_tag("p").first.text
+# 14-15 September
+```
 ## Development
 
 Clone and install dependencies with:

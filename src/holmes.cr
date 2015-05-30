@@ -13,6 +13,6 @@ module Holmes
   end
 
   def self.open(uri)
-    HTTP::Client.get(uri).body
+    Holmes.parse(HTTP::Client.get(uri).body)
   end
 end
