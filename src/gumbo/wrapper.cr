@@ -1,3 +1,4 @@
+require "../holmes/node"
 require "../selector_parser/*"
 
 module Gumbo
@@ -30,11 +31,11 @@ module Gumbo
       to_s(io)
     end
 
-    private def search_node(node, condition, result = [] of Node)
+    private def search_node(node, condition, result = [] of Holmes::Node)
       return result unless node.type == LibGumbo::GumboNodeType::GUMBO_NODE_ELEMENT
 
       if condition.call(node)
-        result << Node.new(node)
+        result << Holmes::Node.new(node)
       else
         children = node.v.element.children
 
